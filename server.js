@@ -2,11 +2,11 @@ const express = require("express");
 const users = require("./users");
 const dotenv = require("dotenv").config();
 const bodyParser = require('body-parser');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 // db.authenticate()
 //     .then(() => console.log("Connected"))
