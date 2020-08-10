@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-EmployeeModel = require("./employees");
+UserModel = require("./users");
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -19,6 +19,6 @@ const sequelize = new Sequelize(
     }
 );
 
-const Employee = EmployeeModel(sequelize, Sequelize.DataTypes);
+const User = UserModel(sequelize, Sequelize.DataTypes);
 
-module.exports = { Employee };
+module.exports = { User };
