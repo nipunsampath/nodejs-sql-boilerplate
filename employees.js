@@ -1,10 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define("employees", {
-        id: {
-            type: type.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
+    return sequelize.define("employee", {
         FirstName: {
             type: type.STRING,
             allowNull: false,
@@ -13,21 +8,21 @@ module.exports = (sequelize, type) => {
             type: type.STRING,
             allowNull: false,
         },
-        DOB:{
+        DOB: {
             type: type.DATE,
             allowNull: false,
         },
-        Hours:{
+        Hours: {
             type: type.DOUBLE,
             allowNull: false,
         },
-        Address:{
-            type: type.STRING,
-            allowNull:true,
-        },
-        EmpCategory:{
+        EmpCategory: {
             type: type.INTEGER,
             allowNull: false,
+        },
+        Address: {
+            type: type.STRING,
+            allowNull: true,
         }
     });
 };
