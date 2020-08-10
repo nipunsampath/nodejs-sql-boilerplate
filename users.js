@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define("users", {
+    return sequelize.define("user", {
         name: {
             type: type.STRING,
             allowNull: false,
