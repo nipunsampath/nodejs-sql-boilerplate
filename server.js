@@ -30,8 +30,7 @@ app.post("/saveEmployee", async (req, res) => {
             'FirstName': payload['fname'],
             'LastName': payload['lname'],
             'DOB': payload['dob'],
-            'Hours': payload['hours'],
-            'EmpCategory': payload['empCategory'],
+            'EmpType': payload['empType'],
             'Address': payload['address']
         });
         console.log("added new employee:\n", newEmp.toJSON());

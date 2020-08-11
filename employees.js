@@ -12,12 +12,8 @@ module.exports = (sequelize, type) => {
             type: type.DATE,
             allowNull: false,
         },
-        Hours: {
-            type: type.DOUBLE,
-            allowNull: false,
-        },
-        EmpCategory: {
-            type: type.INTEGER,
+        EmpType: {
+            type: type.STRING,
             allowNull: false,
         },
         Address: {
