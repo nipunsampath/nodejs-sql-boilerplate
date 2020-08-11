@@ -25,15 +25,23 @@ app.get("/employees", (req, res) => {
 
 app.post("/saveEmployee", async (req, res) => {
     const payload = req.body;
-    const newEmp = await Employee.create({
-        'FirstName': payload['fname'],
-        'LastName': payload['lname'],
-        'DOB': payload['dob'],
-        'Hours': payload['hours'],
-        'EmpCategory': payload['empCategory'],
-        'Address': payload['address']
-    });
-    console.log("added new employee:\n",newEmp.toJSON());
+    try {
+        const newEmp = await Employee.create({
+            'FirstName': payload['fname'],
+            'LastName': payload['lname'],
+            'DOB': payload['dob'],
+            'Hours': payload['hours'],
+            'EmpCategory': payload['empCategory'],
+            'Address': payload['address']
+        });
+        console.log("added new employee:\n", newEmp.toJSON());
+        res.sendStatus(200);
+    }
+    catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+
 });
 
 const PORT = process.env.PORT || 5000;
