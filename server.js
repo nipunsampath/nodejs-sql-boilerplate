@@ -33,8 +33,9 @@ app.post("/saveEmployee", async (req, res) => {
             'EmpType': payload['empType'],
             'Address': payload['address']
         });
-        console.log("added new employee:\n", newEmp.toJSON());
-        res.sendStatus(200);
+        JSON_employee = newEmp.toJSON();
+        console.log("added new employee:\n", JSON_employee);
+        res.send(200).json(JSON_employee);
     }
     catch (err) {
         console.log(err);
