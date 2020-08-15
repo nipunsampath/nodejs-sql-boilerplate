@@ -35,7 +35,7 @@ app.post("/saveEmployee", async (req, res) => {
         });
         JSON_employee = newEmp.toJSON();
         console.log("added new employee:\n", JSON_employee);
-        res.send(200).json(JSON_employee);
+        res.status(200).json(JSON_employee);
     }
     catch (err) {
         console.log(err);
